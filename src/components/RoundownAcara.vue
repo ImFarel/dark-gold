@@ -1,6 +1,5 @@
 <template>
   <div class="roundown-acara container-fluid text-center">
-      
 
       <div class="roundown-content container text-center py-5">
         <div class="tanggal-countdown mb-4">
@@ -14,7 +13,7 @@
           <div class="tanggal-acara pt-3">
               <h1>{{ tanggal }}</h1>
           </div>
-          
+
           <div class="countdown container mt-5" v-if="loaded">
 
               <div class="countdown-wrapper row d-flex justify-content-center">
@@ -56,7 +55,7 @@
                         <h1 class="kolom-title">Akad Nikah</h1>
                         <h6 class="kolom-subtitle">Sabtu 12 Desember 2022</h6>
                         <p class="kolom-subtitle">08.00 WIB - Selesai</p>
-                    </div>      
+                    </div>
                     <div class="lokasi pt-1">
                         <h1 class="kolom-title">Lokasi</h1>
                         <p class="kolom-subtitle">Masjid Al-Ikhlas</p>
@@ -107,17 +106,17 @@
             </div>
 
             <div class="foto-pasangan d-flex flex-wrap justify-content-center align-items-center">
-                
+
                     <img  src="../assets/images/RoundownAcaraImg/WeddingKit-3.png"  alt="">
-             
+
                     <img  src="../assets/images/RoundownAcaraImg/WeddingKit-2.png"  alt="">
-             
-                    <img  src="../assets/images/RoundownAcaraImg/WeddingKit-1.png"  alt="">      
+
+                    <img  src="../assets/images/RoundownAcaraImg/WeddingKit-1.png"  alt="">
             </div>
-        </div>  
+        </div>
 
         <div class="img-cerita-kami">
-            <img  src="../assets/images/img/Group28.png"  alt=""> 
+            <img  src="../assets/images/img/Group28.png"  alt="">
         </div>
 
         <div class="d-flex justify-content-center mt-4">
@@ -126,7 +125,7 @@
                     <p class="kolom-title text-end" id="tanggal">16 Juli 2013</p>
                     <p class="text-end" id="ket">Pertemuan pertama</p>
                  </div>
-                 
+
                 <div class="card-story card-story-2 margin-top-card-story bg- rounded">
                     <div class="rounded item-story bg-light  d-flex flex-column">
                         <p class="kolom-title ms-2 text-dark me-auto  " id="judul">Acara Lamaran</p>
@@ -139,11 +138,11 @@
                 <div class="title-story margin-top-title-2">
                     <p class="kolom-title text-end" id="tanggal">18 Agustus 2021</p>
                     <p class="text-end" id="ket">Pernikahan</p>
-                 </div>         
+                 </div>
             </div>
 
             <div class="pemisah-story">
-                   <img  src="../assets/images/img/garis.png"  alt="">    
+                   <img  src="../assets/images/img/garis.png"  alt="">
             </div>
 
             <div class="  col-md-4 ms-3 mt-5">
@@ -165,79 +164,76 @@
                         <p class="text-dark ms-2 text-start " id="ket">Akhirnya kami pun mengucapkan janji suci.</p>
                     </div>
                 </div>
-             
+
             </div>
 
         </div>
-
-        
-     
 
   </div>
 </template>
 
 <script>
 export default {
-    name: 'RoundownAcara',
-    props: {
-        tanggal: String,
+  name: 'RoundownAcara',
+  props: {
+    tanggal: String,
+  },
+  data: () => ({
+    displayDays: 0,
+    displayHours: 0,
+    displayMinutes: 0,
+    displaySeconds: 0,
+    loaded: false, // Agar Ketika di Refresh, Countdown Tidak Berubah Jadi 00:00:00:00
+    expired: false, // Mengatur jika waktu countdown sudah habis
+  }),
+  computed: {
+    _seconds: () => 1000,
+    _minutes() {
+      return this._seconds * 60;
     },
-    data: () => ({
-        displayDays: 0,
-        displayHours: 0,
-        displayMinutes: 0,
-        displaySeconds: 0,
-        loaded: false, // Agar Ketika di Refresh, Countdown Tidak Berubah Jadi 00:00:00:00
-        expired: false //Mengatur jika waktu countdown sudah habis
-    }),
-    computed: {
-        _seconds: () => 1000,
-        _minutes() {
-            return this._seconds * 60
-        },
-        _hours() {
-            return this._minutes * 60
-        },
-        _days() {
-            return this._hours * 24
-        },
+    _hours() {
+      return this._minutes * 60;
     },
-    mounted() {
-        this.showRemaining();
+    _days() {
+      return this._hours * 24;
     },
-    methods: {
-        formatNum: num => (num < 10 ? "0" + num : num), // Format Untuk Mendisplay Date
-        showRemaining() {
-            const timer = setInterval(() => {
-                const date = new Date(); // Mengambil Date 
-                const dateEnd = new Date(2022, 11, 12, 10, 10, 10, 10); //Atur Countdown
-                const distance = dateEnd.getTime() - date.getTime(); //Mencari jarak detik antara tanggal yang ditentukan dan tanggal sekarang
+  },
+  mounted() {
+    this.showRemaining();
+  },
+  methods: {
+    formatNum: (num) => (num < 10 ? `0${num}` : num), // Format Untuk Mendisplay Date
+    showRemaining() {
+      const timer = setInterval(() => {
+        const date = new Date(); // Mengambil Date
+        const dateEnd = new Date(2022, 11, 12, 10, 10, 10, 10); // Atur Countdown
+        const distance = dateEnd.getTime() - date.getTime(); // Mencari jarak detik antara tanggal yang ditentukan dan tanggal sekarang
 
-                if(distance < 0) { // Jika waktu countdown sudah habis, clearInterval Timer
-                    clearInterval(timer);
-                    this.expired = true;
-                    this.loaded = true;
-                    return
-                }
-
-                const days = Math.floor((distance / this._days));
-                const hours = Math.floor((distance % this._days) / this._hours);
-                const minutes = Math.floor((distance % this._hours) / this._minutes);
-                const seconds = Math.floor((distance % this._minutes) / this._seconds);
-
-                this.displaySeconds = this.formatNum(seconds);
-                this.displayMinutes = this.formatNum(minutes);
-                this.displayHours = this.formatNum(hours);
-                this.displayDays = this.formatNum(days);
-                this.loaded = true;
-            }, 1000);
+        if (distance < 0) { // Jika waktu countdown sudah habis, clearInterval Timer
+          clearInterval(timer);
+          this.expired = true;
+          this.loaded = true;
+          return;
         }
-    }
-}
+
+        const days = Math.floor((distance / this._days));
+        const hours = Math.floor((distance % this._days) / this._hours);
+        const minutes = Math.floor((distance % this._hours) / this._minutes);
+        const seconds = Math.floor((distance % this._minutes) / this._seconds);
+
+        this.displaySeconds = this.formatNum(seconds);
+        this.displayMinutes = this.formatNum(minutes);
+        this.displayHours = this.formatNum(hours);
+        this.displayDays = this.formatNum(days);
+        this.loaded = true;
+      }, 1000);
+    },
+  },
+};
 </script>
 
 <style>
-  
+
     .item-story{
             padding: 0.4rem;
         }
@@ -248,12 +244,11 @@ export default {
     .card-story {
         height: 26rem;
     }
-    
-   
+
     .item-card{
         height: 20rem;
     }
-    
+
     .card-story #judul{
         font-size: 2rem;
     }
@@ -280,22 +275,20 @@ export default {
       .margin-top-title-2{
         margin-top: 1.7rem;
     }
- 
- 
+
     .foto-pasangan img{
         padding: 4px;
         max-width: 170px;
-    
-    
+
     }
     .kata-story p{
         color:white ;
         font-size: 8px;
         margin-top: 1rem;
         margin-bottom: 1rem;
-    
+
     }
-    
+
     .title-story #tanggal{
         font-size: 40px;
 
@@ -306,7 +299,7 @@ export default {
         margin-top: -20px;
 
     }
- 
+
     .roundown-acara {
         min-height: 100vh;
         background: #222121;
@@ -334,8 +327,8 @@ export default {
     }
 
     /* === Vector Bunga Kecil Di Samping TC Title === */
-    #bunga11, #bunga22 { 
-        position: absolute; 
+    #bunga11, #bunga22 {
+        position: absolute;
         max-width: 50px;
         transform: translateY(-1rem);
     }
@@ -348,15 +341,13 @@ export default {
         #bunga11 { right: -5% }
         #bunga22 { left: -5% }
     }
-    
-    
 
     .tanggal-acara h1 {
         font-family: var(--first-font);
         color: var(--primary-color);
         font-size: 32px;
     }
-    
+
     .box-date {
         height: 90px;
         background: rgba(54, 47, 45, 0.7);
@@ -446,7 +437,6 @@ export default {
         font-family: var(--second-font);
         font-weight: normal;
     }
-    
 
     @media screen and (max-width: 768px) {
         .info-acara {
@@ -481,12 +471,11 @@ export default {
         .lokasi {
             margin-bottom: 3rem;
         }
-  
+
           .img-cerita-kami img {
             height: 50px;
         }
-        
-        
+
         .pemisah-story img{
             height: 35rem;
         }
@@ -505,12 +494,12 @@ export default {
 
         .card-story {
             height: 10rem;
-            margin-top: -1.7rem;     
-            width: 10rem;    
+            margin-top: -1.7rem;
+            width: 10rem;
         }
         .card-story-2 {
             height: 10rem;
-            width: 9.2rem;       
+            width: 9.2rem;
         }
         .item-story{
             padding: 0.4rem;
@@ -522,8 +511,8 @@ export default {
         .card-story #img{
             height: 80px;
             width: auto;
-        } 
-  
+        }
+
         .card-story #ket{
             font-size: 10px;
             margin-bottom: -0.1rem;
@@ -545,7 +534,6 @@ export default {
         .margin-top-title-3{
              margin-top: -0.8rem;
         }
-      
 
       }
 
@@ -553,7 +541,7 @@ export default {
         .roundown-acara {
             padding-bottom: 15rem;
         }
-        
+
         .foto-pasangan img{
               max-width: 30rem;
         }

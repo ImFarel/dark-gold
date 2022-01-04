@@ -7,12 +7,11 @@
 </template>
 
 <script>
-import SectionSatu from './components/SectionSatu.vue'
-import BrideName from './components/BrideName.vue'
-import RoundownAcara from './components/RoundownAcara.vue'
-import BukuTamuSection from './components/bukuTamuSection.vue'
-import EndSection from './components/endSection.vue'
-
+import SectionSatu from './components/SectionSatu.vue';
+import BrideName from './components/BrideName.vue';
+import RoundownAcara from './components/RoundownAcara.vue';
+import BukuTamuSection from './components/bukuTamuSection.vue';
+import EndSection from './components/endSection.vue';
 
 export default {
   name: 'App',
@@ -22,11 +21,10 @@ export default {
     RoundownAcara,
     BukuTamuSection,
     EndSection,
-   
-  }
-}
-</script>
 
+  },
+};
+</script>
 
 <style>
 

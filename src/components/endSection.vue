@@ -5,7 +5,7 @@
         <p id="ket">Dan jika memberi adalah ungkapan tanda kasih anda, anda dapat memberi kado secara cashless dengan mengirim <br>
         amplop digital secara transfer pada akun di bawah ini :</p>
         <div class="d-flex justify-content-center flex-wrap">
-          
+
               <div class="qr-code d-flex flex-column align-items-center">
                 <p id="judul">BCA - 4980131187</p>
                 <img src="../assets/images/img/Code1.png" alt="">
@@ -31,7 +31,7 @@
 <script>
 export default {
 
-}
+};
 </script>
 
 <style>
@@ -50,9 +50,9 @@ export default {
      .table-end-section #ket{
         font-size: 1.4rem;
     }
-    
+
     .qr-code{
-        background: white;   
+        background: white;
         min-height: 20rem;
         min-width: 25rem;
         padding: 1rem;
@@ -65,7 +65,7 @@ export default {
     .qr-code img{
         width: 13rem;
     }
-  
+
     .qr-code #judul{
         font-size: 1.9rem;
     }
@@ -105,7 +105,7 @@ export default {
     .qr-code img{
         width: 7rem;
     }
-  
+
     .qr-code #judul{
         margin-top: 0px;
         font-size: 0.8rem;
@@ -117,13 +117,12 @@ export default {
         margin-right: 0.5rem;
     }
     .end img{
-        
+
         max-height: 3rem;
     }
     .end{
         margin-top: 1rem;
     }
     }
-
 
 </style>

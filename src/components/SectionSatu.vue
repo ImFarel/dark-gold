@@ -6,10 +6,10 @@
                 <div class="cover-text text-center rounded ">
                     <div class="header-side">
                         <p class="fs-3" >Undangan ernikahan</p>
-                        <h1>{{ namaPria }} &  {{ namaWanita }}</h1> 
+                        <h1>{{ namaPria }} &  {{ namaWanita }}</h1>
                     </div>
                     <div class="footer-side">
-                    <p class="fs-4 mt-2 ">Kpd Bpk/Ibu/Saudari/i <br>Nama Tamu Undangan</p> 
+                    <p class="fs-4 mt-2 ">Kpd Bpk/Ibu/Saudari/i <br>Nama Tamu Undangan</p>
                         <label for="check">
                             <i class="btn btn-primary" id="btn" >Buka Undangan</i>
                         </label>
@@ -26,8 +26,8 @@
           <h1>{{ namaPria }} <br> & <br> {{ namaWanita }}</h1>
       </div>
       <div class="cover-ayat text-center">
-          <p>“Dan di antara tanda-tanda (kebesaran)-Nya adalah Dia menciptakan pasangan-pasangan 
-              untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, 
+          <p>“Dan di antara tanda-tanda (kebesaran)-Nya adalah Dia menciptakan pasangan-pasangan
+              untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
               dan Dia menjadikan di antaramu rasa kasih dan sayang. Ar-Ruum : 21"
           </p>
       </div>
@@ -37,12 +37,12 @@
 
 <script>
 export default {
-    name: 'Cover',
-    props: {
-        namaPria: String,
-        namaWanita: String
-    }
-}
+  name: 'Cover',
+  props: {
+    namaPria: String,
+    namaWanita: String,
+  },
+};
 </script>
 
 <style>
@@ -53,8 +53,7 @@ export default {
         padding: 0;
         box-sizing: border-box;
     }
-    
-    
+
     .card-sidebar {
         min-height: 85vh;
         background: url("../assets/images/Background/bg-flash-slide.png");
@@ -64,7 +63,7 @@ export default {
         position: fixed;
         position: relative;
         z-index: 100;
-  
+
     }
 
     .sidebar {
@@ -75,11 +74,10 @@ export default {
 
     }
 
-
     label #btn{
         cursor: pointer;
     }
-    
+
     #check{
         display: none;
     }
@@ -88,7 +86,6 @@ export default {
       top:-1000rem;
     }
 
-    
      .cover {
         min-height: 100vh;
         background: url("../assets/images/SecImg/bgimage.png");
@@ -110,7 +107,6 @@ export default {
     .container-flash{
         height: 100vh;
     }
-   
 
     /* === Vector === */
     #vector1, #vector2 {
@@ -143,7 +139,7 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.336);  
+        background: rgba(0, 0, 0, 0.336);
     }
 
     .cover-text p {

@@ -1,6 +1,6 @@
 <template>
 <div class="buku-tamu-section text-center ">
-    
+
     <div class="container-fluid  d-flex justify-content-center">
         <div class="bunga-left ">
             <img  src="../assets/images/img/Group30.png" alt="">
@@ -18,11 +18,11 @@
                         <div class="p-form-doa d-flex rounded flex-column justify-content-evenly">
                             <form action="#" method="/POST">
                                 <input class="form-control input-1" placeholder="Nama Anda" name="nama">
-                                <textarea id="text-area-form" name="ket" class="form-control input-2" placeholder="Berikan Ucapan & Doa"></textarea>                 
+                                <textarea id="text-area-form" name="ket" class="form-control input-2" placeholder="Berikan Ucapan & Doa"></textarea>
                                 <select  class="form-control" placeholder="Konfirmasi kehadiran" id="option-form" name="" >
                                     <option value="#" disabled selected>Konfirmasi Kehadiran</option>
                                     <option value="hadir">Hadir</option>
-                                    <option value="tidak_hadir">Tidak Hadir</option>                   
+                                    <option value="tidak_hadir">Tidak Hadir</option>
                                 </select>
                                 <button id="button-form" type="submit"  class="btn">Kirim</button>
                             </form>
@@ -35,19 +35,17 @@
          <div class="bunga-right" >
             <img  src="../assets/images/img/Group29.png" alt="">
         </div>
-         
+
     </div>
 
-  
   </div>
 
-  
 </template>
 
 <script>
 export default {
 
-}
+};
 </script>
 
 <style>
@@ -68,13 +66,13 @@ export default {
 
     .form-doa{
         min-width: 65rem;
-        margin-left: 1rem;  
+        margin-left: 1rem;
     }
     .form-doa #border{
         border: 5px solid var(--primary-color);
         border-radius: 11px;
         background: rgba(54, 47, 45,9);
-           
+
     }
 
     .form-doa input{
@@ -99,7 +97,6 @@ export default {
         background:var(--primary-color);
         border: 1px solid black;
 
-        
     }
 
     .form-doa #option-form{
@@ -122,17 +119,17 @@ export default {
     }
     .bunga-left{
         margin-top: 15rem;
-        left: 0; 
+        left: 0;
         position: absolute;
     }
     .bunga-right{
         right: 0;
         position: absolute;
-        
+
     }
     .buku-tamu{
         width: 16rem;
-    
+
     }
     .buku-tamu #judul {
         font-size: 2rem;
@@ -140,17 +137,16 @@ export default {
     .buku-tamu #ket {
         font-size: 1rem;
     }
-    
+
     @media screen and (max-width: 768px)  {
     .bunga-left img{
         max-height: 4rem;
-        margin-top: -17rem; 
-      
+        margin-top: -17rem;
+
     }
     .bunga-right img{
         max-height: 4rem;
-    
-        
+
     }
     .form-buku-tamu{
         padding-left:2rem ;
@@ -159,7 +155,7 @@ export default {
     }
 
     .buku-tamu{
-        width: 7rem;   
+        width: 7rem;
     }
     .buku-tamu #judul {
         font-size: 1.2rem;
@@ -171,7 +167,7 @@ export default {
 
     .form-doa{
         min-width: auto;
-        margin-left: 0.5rem;  
+        margin-left: 0.5rem;
     }
      .p-form-doa{
         padding:0.6rem ;
@@ -184,7 +180,7 @@ export default {
         border: 0.1rem solid var(--primary-color);
         border-radius: 3px;
         background: rgba(54, 47, 45,9);
-           
+
     }
     .form-doa input{
         margin: 0.1rem;
@@ -214,8 +210,6 @@ export default {
         background:var(--primary-color);
         border: 0.5px solid black
     }
-
-   
 
     }
 </style>

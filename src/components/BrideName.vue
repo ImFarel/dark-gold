@@ -6,8 +6,8 @@
       <div class="bridename-content mt-3">
         <div class="bn-text text-center container">
           <p>Assalamu'alaikum Warahmatullahi Wabarakatuh.</p>
-          <p>Maha suci Allah yang telah menciptakan mahluk-Nya berpasang-pasangan. Ya Allah, 
-              perkenankanlah kami merangkaikan kasih sayang yang Kau ciptakan <br> diantara kami untuk 
+          <p>Maha suci Allah yang telah menciptakan mahluk-Nya berpasang-pasangan. Ya Allah,
+              perkenankanlah kami merangkaikan kasih sayang yang Kau ciptakan <br> diantara kami untuk
               mengikuti Sunnah Rasul-Mu dalam rangka membentuk keluarga yang sakinah, mawaddah, warahmah.
           </p>
         </div>
@@ -49,8 +49,8 @@
 
 <script>
 export default {
-    name: 'BrideName',
-}
+  name: 'BrideName',
+};
 </script>
 
 <style>
@@ -114,7 +114,7 @@ export default {
     }
 
 /* === Atur Size Foto Pengantin (Mobile) === */
-    .mempelai-pria .foto-pria img, 
+    .mempelai-pria .foto-pria img,
     .mempelai-wanita .foto-wanita img {
         max-width: 110px;
     }
@@ -159,7 +159,7 @@ export default {
             width: 00%;
         }
 
-        .mempelai-pria .foto-pria img, 
+        .mempelai-pria .foto-pria img,
         .mempelai-wanita .foto-wanita img {
             max-width: 70px;
             object-fit: cover;
@@ -172,7 +172,7 @@ export default {
 
 /* === Desktop Ver === */
     @media screen and (min-width: 900px) {
-        .mempelai-pria .foto-pria img, 
+        .mempelai-pria .foto-pria img,
         .mempelai-wanita .foto-wanita img {
             max-width: 210px;
         }
@@ -196,4 +196,4 @@ export default {
             z-index: 1;
         }
     }
-</style>    
+</style>
